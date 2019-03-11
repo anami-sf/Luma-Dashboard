@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 import './App.css';
-import { setCadance } from './actions';
+import { setCadance } from '../../actions';
 
 const mapStateToProps = (state) => {
   return{

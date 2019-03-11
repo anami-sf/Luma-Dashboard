@@ -1,3 +1,7 @@
+import { 
+    SET_CADANCE
+} from './constants.js';
+
 const initializeStateCadance = {
     apptCadance:null
 };
@@ -5,7 +9,7 @@ const initializeStateCadance = {
 const apptCadance = (state=initializeStateCadance, action)=>{
     const newState = {...state}
     
-    if(action.type==='SET_CADANCE'){
+    if(action.type===SET_CADANCE){
         newState.apptCadance = action.payload
     }
 

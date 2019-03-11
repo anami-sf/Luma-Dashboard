@@ -17,14 +17,17 @@ export const apptCadance = (state=initializeStateCadance, action)=>{
     return newState
 };
 
-export const questionTracker = (state=1, action)=>{
+const initializeStatePosition = {
+    questionTracker:1
+};
+
+export const questionTracker = (state=initializeStatePosition, action)=>{
     const newState = {...state}
 
     if(action.type===SET_POSITION){
-        newState.position = newState.position++
+        newState.questionTracker = ++newState.questionTracker
     }
     
-
     return newState
 }
 

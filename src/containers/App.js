@@ -2,18 +2,21 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 import './App.css';
-import { setCadance } from '../actions';
+import { setCadance, setPosition } from '../actions';
 import FlowChart from './flow_chart.js';
+import Form from './form.js';
 
 const mapStateToProps = (state) => {
   return{
-    apptCadance: state.apptCadance
+    apptCadance: state.apptCadance,
+    questionTracker: state.questionTracker
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    onSetCadance: (event) => dispatch(setCadance(event.target.value))
+    onSetCadance: (event) => dispatch(setCadance(event.target.value)),
+    nextQuestion: () => dispatch(setPosition())
   }
 };
 
@@ -23,12 +26,11 @@ class App extends Component {
     return (
       <div className="App">
         <FlowChart apptCadance = {this.props.apptCadance}/> 
-        <div>On what day would like to send reminders? </div>
-        <select onChange={this.props.onSetCadance} >
-          <option>Day 1</option>
-          <option>Day 2</option>
-          <option>Day 3</option>
-        </select>
+        <Form 
+        onSetCadance={this.props.onSetCadance} 
+        questionTracker={this.props.questionTracker}
+        nextQuestion={this.props.nextQuestion}
+        />
       </div>
     );
   }

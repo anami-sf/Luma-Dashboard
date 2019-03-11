@@ -1,6 +1,7 @@
 import { 
     SET_CADANCE,
-    SET_POSITION
+    NEXT_QUESTION,
+    PREVIOUS_QUESTION
 } from './constants.js';
 
 export const setCadance = (text) => {
@@ -10,8 +11,14 @@ export const setCadance = (text) => {
     }
 }
 
-export const setPosition = () => {
+export const next = () => {
     return {
-        type: SET_POSITION,  // This is a constant
+        type: NEXT_QUESTION  // This is a constant
+    }
+}
+
+export const back = () => {
+    return {
+        type: PREVIOUS_QUESTION,  // This is a constant
     }
 }

@@ -1,6 +1,7 @@
 import { 
     SET_CADANCE,
-    SET_POSITION
+    NEXT_QUESTION,
+    PREVIOUS_QUESTION
 } from './constants.js';
 
 const initializeStateCadance = {
@@ -24,8 +25,11 @@ const initializeStatePosition = {
 export const questionTracker = (state=initializeStatePosition, action)=>{
     const newState = {...state}
 
-    if(action.type===SET_POSITION){
+    if(action.type===NEXT_QUESTION){
         newState.questionTracker = ++newState.questionTracker
+    }
+    if(action.type===PREVIOUS_QUESTION){
+        newState.questionTracker = --newState.questionTracker
     }
     
     return newState

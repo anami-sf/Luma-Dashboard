@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 import './App.css';
-import { setCadance, setPosition } from '../actions';
+import { setCadance, next, back } from '../actions';
 import FlowChart from './flow_chart.js';
 import Form from './form.js';
 
@@ -16,7 +16,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return{
     onSetCadance: (event) => dispatch(setCadance(event.target.value)),
-    nextQuestion: () => dispatch(setPosition())
+    nextQuestion: () => dispatch(next()),
+    previousQuestion: () => dispatch(back())
   }
 };
 
@@ -29,6 +30,7 @@ class App extends Component {
         <Form 
         onSetCadance={this.props.onSetCadance} 
         questionTracker={this.props.questionTracker}
+        previousQuestion={this.props.previousQuestion}
         nextQuestion={this.props.nextQuestion}
         />
       </div>

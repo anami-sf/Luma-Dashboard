@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 import './App.css';
+import { setCadance } from './actions';
 
 const mapStateToProps = (state) => {
   return{
@@ -11,8 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    onSetCadance: (event) => dispatch({type: 'SET_CADANCE', payload: event.target.value}),
-
+    onSetCadance: (event) => dispatch(setCadance(event.target.value))
   }
 };
 

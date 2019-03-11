@@ -1,10 +1,11 @@
 import React from 'react';
 
 const ApptCadance = ({apptCadance}) => {
+    console.log(apptCadance)
     return(
         <div>
-            { apptCadance
-                ? <div>{apptCadance}</div>
+            { apptCadance.apptCadance
+                ? <button>{apptCadance.apptCadance}</button>
                 : <div>LumaHealth</div>  
             }
         </div>

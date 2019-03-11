@@ -1,15 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware, combineReducers} from 'redux';
+import thunkMiddleware from 'redux-thunk';
 import * as serviceWorker from './serviceWorker';
 
 
 import './index.css';
 import App from './App';
-import reducer from './reducer.js'
+import apptCadance from './reducers.js';
 
-const store = createStore(reducer);
+//const rootReducer = combineReducers({ apptCadance })
+
+
+const store = createStore(
+    apptCadance, 
+    applyMiddleware(thunkMiddleware)
+);
 
 
 ReactDOM.render(

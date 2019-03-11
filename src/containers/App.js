@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import './App.css';
 import { setCadance } from '../actions';
-import ApptCadance from '../components/apptCadance/apptCadance.js';
+import FlowChart from './flow_chart.js';
 
 const mapStateToProps = (state) => {
   return{
@@ -22,7 +22,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <ApptCadance apptCadance = {this.props.apptCadance}/> 
+        <FlowChart apptCadance = {this.props.apptCadance}/> 
         <div>On what day would like to send reminders? </div>
         <select onChange={this.props.onSetCadance} >
           <option>Day 1</option>

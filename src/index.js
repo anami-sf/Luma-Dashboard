@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 
 
 import './index.css';
-import App from './containers/App/App';
+import App from './containers/App';
 import apptCadance from './reducers.js';
 
 //const rootReducer = combineReducers({ apptCadance })

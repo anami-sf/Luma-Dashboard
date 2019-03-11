@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 import './App.css';
-import { setCadance } from '../../actions';
+import { setCadance } from '../actions';
+import ApptCadance from '../components/apptCadance/apptCadance.js';
 
 const mapStateToProps = (state) => {
   return{
@@ -21,12 +22,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      {this.props.apptCadance?
-           <div>{this.props.apptCadance}</div>
-          : <div>LumaHealth</div>
-  
-      }
-        
+        <ApptCadance apptCadance = {this.props.apptCadance}/> 
         <div>On what day would like to send reminders? </div>
         <select onChange={this.props.onSetCadance} >
           <option>Day 1</option>
